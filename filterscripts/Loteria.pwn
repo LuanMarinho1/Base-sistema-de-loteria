@@ -6,7 +6,7 @@
 #include <sscanf2>
 
 #define VALOR 500
-#define TEMPO 15000
+#define TEMPO 3600000
 #define PREMIO 200000
 
 new ContarLoteria, Text:LoteriaTexto, bool:LoteriaInit, bool:TemBilhete[MAX_PLAYERS], BilheteNumero[MAX_PLAYERS];
@@ -52,6 +52,7 @@ forward LoteriaUpdate(); public LoteriaUpdate()
 CMD:bilhete(playerid, params[])
 {
 	if(sscanf(params, "i", BilheteNumero[playerid])) return SendClientMessage(playerid, -1, "[ERRO] Use /bilhete [Número 1-99]");
+	if(TemBilhete[playerid] == true) return SendClientMessage(playerid, -1, "[ERRO] Você já possui um bilhete.");
 	if(BilheteNumero[playerid] < 1 || BilheteNumero[playerid] > 99) return SendClientMessage(playerid, -1, "[ERRO] Escolha um número entre 1 - 99");
 	TemBilhete[playerid] = true, GivePlayerMoney(playerid, -VALOR), SendClientMessage(playerid, -1, "[Loteria] Bilhete comprado!");
 	return 1;
