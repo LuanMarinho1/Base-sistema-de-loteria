@@ -21,7 +21,7 @@ https://www.youtube.com/watch?v=jNJR43MsZ6Y
 
 Configure o valor de compra de cada bilhete na `#define VALOR`, onde o valor padrão de compra é de 500$.
 
-Configure o tempo entre cada sorteio com o valor em milisegundos no `#define TEMPO`, onde o tempo padrão entre cada sorteio é de uma hora.
+Configure o tempo entre cada sorteio com o valor em milissegundos no `#define TEMPO`, onde o tempo padrão entre cada sorteio é de uma hora.
 
 Configure o valor do prêmio entregue ao vencedor na `#define PREMIO`, onde o valor padrão do prêmio é de 200000$.
 
